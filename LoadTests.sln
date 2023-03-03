@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UuidDatabaseThroughputTest", "UuidDatabaseThroughputTest\UuidDatabaseThroughputTest.csproj", "{BD397396-CCE3-4752-9668-E9E66BDB0840}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdHocTests", "AdHocTests\AdHocTests.csproj", "{00093A86-63CE-4714-9600-2649AA502DA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD397396-CCE3-4752-9668-E9E66BDB0840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD397396-CCE3-4752-9668-E9E66BDB0840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD397396-CCE3-4752-9668-E9E66BDB0840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD397396-CCE3-4752-9668-E9E66BDB0840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00093A86-63CE-4714-9600-2649AA502DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00093A86-63CE-4714-9600-2649AA502DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00093A86-63CE-4714-9600-2649AA502DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00093A86-63CE-4714-9600-2649AA502DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
