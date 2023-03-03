@@ -28,7 +28,11 @@ docker run --name uuids-mysql-3 -e MYSQL_ROOT_PASSWORD=root -p33306:3306 -d mysq
 
 Connection string to mysql
 ```connectionstring
-Data Source=localhost; Port=3306; Character Set=utf8mb4; User Id=root; Password=root; convertzerodatetime=true; Allow User Variables=True; Pooling=true; Max Pool Size=50;SSL Mode=Preferred; ConnectionIdleTimeout=120; CancellationTimeout=-1; ConnectionTimeout=10; DefaultCommandTimeout=20; Keepalive=10; ServerRedirectionMode=Preferred;
+Data Source=localhost; Port=13306; Character Set=utf8mb4; User Id=root; Password=root; convertzerodatetime=true; Allow User Variables=True; Pooling=true; Max Pool Size=50;SSL Mode=Preferred; ConnectionIdleTimeout=120; CancellationTimeout=-1; ConnectionTimeout=10; DefaultCommandTimeout=20; Keepalive=10; ServerRedirectionMode=Preferred;
+
+Data Source=localhost; Port=23306; Character Set=utf8mb4; User Id=root; Password=root; convertzerodatetime=true; Allow User Variables=True; Pooling=true; Max Pool Size=50;SSL Mode=Preferred; ConnectionIdleTimeout=120; CancellationTimeout=-1; ConnectionTimeout=10; DefaultCommandTimeout=20; Keepalive=10; ServerRedirectionMode=Preferred;
+
+Data Source=localhost; Port=33306; Character Set=utf8mb4; User Id=root; Password=root; convertzerodatetime=true; Allow User Variables=True; Pooling=true; Max Pool Size=50;SSL Mode=Preferred; ConnectionIdleTimeout=120; CancellationTimeout=-1; ConnectionTimeout=10; DefaultCommandTimeout=20; Keepalive=10; ServerRedirectionMode=Preferred;
 ```
 
 Тут небольшое исследование. Делаем табличку, и вставляем данные, одновременно постоянно читаем N последних записей. Ключ таблички - binary(16). Сравнивается производительность операций записи и чтения для Uuid.MySqlOptimized() и его же, приведенного к Guid через строку. То есть у Uuid и Guid одинаковое строковое представление, но в бинарном виде, и, соответственно, в ключе базы, представление разное. У Guid получаются переставлены местами существенные для производительности разряды. Видим, что вставка медленнее на ~45% процентов, чтение медленнее на ~35%.
